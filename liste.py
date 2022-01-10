@@ -38,7 +38,7 @@ def longueurNomV1_2(liste_nom) :
 def longueurNomv2(liste_nom) : 
     liste_longueur = [0]*len(liste_nom)
     for i in range(len(liste_nom)):
-        liste_longueur =liste_longueur + [i]
+        liste_longueur[i] = len(liste_nom[i])
     print(liste_longueur)
     
-longueurNomv2(liste_nom)
+#exercice6
