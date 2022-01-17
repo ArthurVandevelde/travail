@@ -41,4 +41,17 @@ def longueurNomv2(liste_nom) :
         liste_longueur[i] = len(liste_nom[i])
     print(liste_longueur)
     
-#exercice6
+#exercice 6
+t=['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
+
+for afficheListe in t:
+    print(afficheListe)
+
+#exercice 7
+    
+liste = [23, 45, 23, 43, 7, 66, 21, 45, 23, 7, 200, 200]
+def enleveDoublon(liste):
+    for doublon in liste:
+        for doublon_v2 in range(liste):
+            if doublon == doublon_v2 :
+                del 
