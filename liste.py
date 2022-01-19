@@ -44,8 +44,9 @@ def longueurNomv2(liste_nom) :
 #exercice 6
 t=['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
 
-for afficheListe in t:
-    print(afficheListe)
+def affiche_liste(liste):
+    for c in liste:
+        print(c,end='')
 
 #exercice 7
     
