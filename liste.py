@@ -51,8 +51,12 @@ def affiche_liste(liste):
 #exercice 7
     
 liste = [23, 45, 23, 43, 7, 66, 21, 45, 23, 7, 200, 200]
-def enleveDoublon(liste):
-    for doublon in liste:
-        for doublon_v2 in range(liste):
-            if doublon == doublon_v2 :
-                del 
+
+                
+def enleveDoublon(liste) : 
+    liste_entier = []
+    for nb in liste:
+        if not(nb in liste_entier):
+            liste_entier = liste_entier+[nb]
+            # liste_entier.append(nb)
+    print(liste_entier)
