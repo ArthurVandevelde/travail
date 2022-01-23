@@ -104,7 +104,7 @@ def permute(liste,i,j):
     ATTENTION : MODIFICATION DE LA LISTE EN PLACE !!
     """
     c=liste[i]
-    c2=[j]
+    c2=liste[j]
     liste[i]=c2
     liste[j]=c
     return liste
