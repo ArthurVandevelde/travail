@@ -92,4 +92,19 @@ for i in range(len(a)):
 #pas de fonction mais des boucle
 #parcourir les liste, parcourir a ou bien b par indice
 
-# exercice10
+# exercice 10
+
+liste = ["Bob", "Alice", "Marc", "Tom", "John"]
+
+def permute(liste,i,j):
+    """
+    description: échange dans la liste les éléments d'indice i et j
+    liste (list)
+    i, j (int): indices des éléments à permuter 
+    ATTENTION : MODIFICATION DE LA LISTE EN PLACE !!
+    """
+    c=liste[i]
+    c2=[j]
+    liste[i]=c2
+    liste[j]=c
+    return liste
