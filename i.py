@@ -13,3 +13,11 @@ def decroissant_while(n):
     while n >0:
         print(n, end=' ')
         n=n-1
+        
+# Exercice5
+
+def nombre_alenvers (n):
+    str(n)
+    c =1000
+    while 
+    c = c / 10
