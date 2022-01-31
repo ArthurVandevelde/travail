@@ -34,3 +34,22 @@ def nombre_alenvers (n):
     c =1000
     while 
     c = c / 10
+#exercice6
+L =700   
+N = 0   
+while L < 800:
+    L = L*1.015
+    N = N+1
+print(N)
+    
+#exercice7
+
+def esr_premier(chiffre):
+    
+    
+#exercice9
+    
+def syracuse(n):
+    while ....:
+        n=n%2
+        
