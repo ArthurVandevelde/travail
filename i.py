@@ -44,7 +44,22 @@ print(N)
     
 #exercice7
 
-def esr_premier(chiffre):
+def est_premier(nombre):
+    n = 2
+    while n <= nombre-1:
+        reponce = nombre % n
+        n = n + 1
+        if reponce == 0:
+            return False
+    else:
+        return True
+    
+def k_premier(nombre):
+    n = 2
+    while n <= nombre-1:
+        reponce = nombre % n
+        print(reponce)
+        n = n + 1
     
     
 #exercice9
