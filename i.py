@@ -64,7 +64,23 @@ def k_premier(nombre):
     
 #exercice9
     
-def syracuse(n):
-    while ....:
-        n=n%2
+def Syracuse(nb):
+    print(nb,end=' - ')
+    nom = nb
+    a = 0
+    b = 0
+    while nb > 1:
+        if nb % 2 == 0 : #pair
+            nb = nb // 2
+            print(nb,end=' - ')
+        else : #impair
+            nb = nb * 3 + 1
+            print(nb,end=' - ')
+        a = a +1
+        if nb > b:
+            b = nb
+    print()   
+    print()
+    print('Le temps du vol pour ',nom,' est de ',a,' et son altitude maximale est de ',b)
+    
         
