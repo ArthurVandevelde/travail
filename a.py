@@ -6,13 +6,22 @@ def quatreOperations(a, b):
     division = a / b
     return adition, soustraction, multiplication, division
 
-    
-    
-    
-##monTuple = quatreOperations(8,2)
-##
-##print(monTuple)
-##
-### On remarque bien que monTuple contient 4 éléments la 8+2, 8-2, 8*2 et 8/2
+#exercice3
 
-quatreOperations(8,2)
+def prefixe (e,t):
+    nouveau_tuple = e, + t
+    return nouveau_tuple
+
+def sufixe (e,t):
+    nouveau_tuple = t + e,
+    return nouveau_tuple
+
+def inseve (e,i,t):
+    nouveau_tuple = t[0:i] + e, + t[i+len(t)]
+    
+#exercice4
+    
+
+def supprime (i,t):
+    nouveau_tuple = t[0:i] + t[i+1:len(t)]
+    return nouveau_tuple
