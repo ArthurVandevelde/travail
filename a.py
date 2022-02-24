@@ -30,5 +30,5 @@ def supprime (i,t):
 def ajoute(t1,t2):
     t = ()
     for i in range(len(t1)):
-        t = (t1[i] + t2[i],) + t
+        t = t+ (t1[i] + t2[i],) 
     return t
