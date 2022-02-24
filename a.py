@@ -25,3 +25,10 @@ def inseve (e,i,t):
 def supprime (i,t):
     nouveau_tuple = t[0:i] + t[i+1:len(t)]
     return nouveau_tuple
+
+#exerce5
+def ajoute(t1,t2):
+    t = ()
+    for i in range(len(t1)):
+        t = (t1[i] + t2[i],) + t
+    return t
