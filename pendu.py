@@ -1,3 +1,36 @@
+from random import randint
+
+def nettoyage_mot(mot):
+    """
+    Description de la fonction : met en forme un mot choisi par l'ordinateur
+    mot (str) : mot comportant des caractères non souhaités (accents, majuscules, caractères retour à la ligne)
+    return (str) :  mot "nettoyé" (tout en minuscule, en enlevant les accents et les retours à la ligne)
+    """
+    mot = mot.lower()
+    mot = mot[0:len(mot)-1]
+    accent = ['é','è','ê','ë','à','â','ù','û','ç','ô','ï','î']
+    sans_accent = ['e','e','e','e','a','a','u','u','c','o','i','i']
+    i = 0
+    while i <len(accent):
+        mot = mot.replace(accent[i], sans_accent[i])
+        i = i + 1
+    return mot
+
+def tirage_au_sort(nom_fichier):
+    """
+    Description de la fonction : tire au hasard un mot dans le fichier 
+                                "nettoie ce mot"
+                                fabrique un mot mystère composé d'autant de tirets (-) que de lettres à découvrir
+    nom_fichier (str) : nom du fichier dans lequel le programme va choisir un mot
+    return (tuple) : mot "nettoyé" (str), mot mystere(str)
+    """
+    fichier = open(nom_fichier,'r',encoding = 'utf8')
+    for chiffre in range(randint(1,22274)):
+        chaine = fichier.readline()
+    fichier.close()
+    return nettoyage_mot(chaine)
+
+print(tirage_au_sort('dictionnaire.txt'))
 
 def nettoyage_mot(mot):
     """
@@ -58,7 +91,7 @@ def afficher_bilan():
 #deja_choise  fait
 #jeu_fini        fait
 #afficher_bilan  fait
-#nettoyage_mot
-#tirage_au_sort
+#nettoyage_mot   fait
+#tirage_au_sort  fait
 #remplace_tiret
 #jouer
