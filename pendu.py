@@ -6,16 +6,18 @@ def nettoyage_mot(mot):
     mot (str) : mot comportant des caractères non souhaités (accents, majuscules, caractères retour à la ligne)
     return (str) :  mot "nettoyé" (tout en minuscule, en enlevant les accents et les retours à la ligne)
     """
+    global MOT_MYSTERE
     fichier = open(nom_fichier,'r',encoding = 'utf8')
     for chiffre in range(randint(1,10)):
         chaine = fichier.readline()
     fichier.close()
     i = 0
     MOT_MYSTERE = ""
-    while i < len(nettoyage_mot(chaine)):
+    MOT_A_DECOUVRIR = nettoyage_mot(chaine)
+    while i < len(MOT_A_DECOUVRIR):
         MOT_MYSTERE = MOT_MYSTERE + '-'
         i = i + 1
-    return nettoyage_mot(chaine), MOT_MYSTERE
+    return MOT_A_DECOUVRIR, MOT_MYSTERE
 
 def tirage_au_sort(nom_fichier):
     """
@@ -88,6 +90,14 @@ def afficher_bilan():
         print('Bravo! Vous avez trouvé le mot ' + MOT_A_DECOUVRIR)
         print('Votre SCORE est de ' + str(SCORE))
         
+def remplace_tiret(lettre):
+    """
+    Description de la fonction : Remplace le/les '-' par la lettre si
+    lettre (str) : une lettre proposée par le joueur
+    return (bool) : True si le joueur à trouver une nouvelle lettre, False sinon
+    MODIFICATION DE MOT_MYSTERE
+    """
+    while
     
 #deja_choise  fait
 #jeu_fini        fait
