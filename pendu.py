@@ -6,15 +6,16 @@ def nettoyage_mot(mot):
     mot (str) : mot comportant des caractères non souhaités (accents, majuscules, caractères retour à la ligne)
     return (str) :  mot "nettoyé" (tout en minuscule, en enlevant les accents et les retours à la ligne)
     """
-    mot = mot.lower()
-    mot = mot[0:len(mot)-1]
-    accent = ['é','è','ê','ë','à','â','ù','û','ç','ô','ï','î']
-    sans_accent = ['e','e','e','e','a','a','u','u','c','o','i','i']
+    fichier = open(nom_fichier,'r',encoding = 'utf8')
+    for chiffre in range(randint(1,10)):
+        chaine = fichier.readline()
+    fichier.close()
     i = 0
-    while i <len(accent):
-        mot = mot.replace(accent[i], sans_accent[i])
+    MOT_MYSTERE = ""
+    while i < len(nettoyage_mot(chaine)):
+        MOT_MYSTERE = MOT_MYSTERE + '-'
         i = i + 1
-    return mot
+    return nettoyage_mot(chaine), MOT_MYSTERE
 
 def tirage_au_sort(nom_fichier):
     """
