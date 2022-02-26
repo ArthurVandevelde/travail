@@ -6,18 +6,15 @@ def nettoyage_mot(mot):
     mot (str) : mot comportant des caractères non souhaités (accents, majuscules, caractères retour à la ligne)
     return (str) :  mot "nettoyé" (tout en minuscule, en enlevant les accents et les retours à la ligne)
     """
-    global MOT_MYSTERE
-    fichier = open(nom_fichier,'r',encoding = 'utf8')
-    for chiffre in range(randint(1,10)):
-        chaine = fichier.readline()
-    fichier.close()
+    mot = mot.lower()
+    mot = mot[0:len(mot)-1]
+    accent = ['é','è','ê','ë','à','â','ù','û','ç','î','ï']
+    sans_accent = ['e','e','e','e','a','a','u','u','c','i','i',]
     i = 0
-    MOT_MYSTERE = ""
-    MOT_A_DECOUVRIR = nettoyage_mot(chaine)
-    while i < len(MOT_A_DECOUVRIR):
-        MOT_MYSTERE = MOT_MYSTERE + '-'
+    while i < len(accent):
+        mot = mot.replace(accent[i],sans_accent[i])
         i = i + 1
-    return MOT_A_DECOUVRIR, MOT_MYSTERE
+    return mot
 
 def tirage_au_sort(nom_fichier):
     """
@@ -27,11 +24,18 @@ def tirage_au_sort(nom_fichier):
     nom_fichier (str) : nom du fichier dans lequel le programme va choisir un mot
     return (tuple) : mot "nettoyé" (str), mot mystere(str)
     """
+    global MOT_MYSTERE
     fichier = open(nom_fichier,'r',encoding = 'utf8')
     for chiffre in range(randint(1,22274)):
         chaine = fichier.readline()
     fichier.close()
-    return nettoyage_mot(chaine)
+    i = 0
+    MOT_MYSTERE = ""
+    MOT_A_DECOUVRIR = nettoyage_mot(chaine)
+    while i < len(MOT_A_DECOUVRIR):
+        MOT_MYSTERE = MOT_MYSTERE + '-'
+        i = i + 1
+    return MOT_A_DECOUVRIR, MOT_MYSTERE
 
 print(tirage_au_sort('dictionnaire.txt'))
 
