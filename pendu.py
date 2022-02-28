@@ -109,6 +109,23 @@ def remplace_tiret(lettre):
             print(MOT_MYSTERE)
             res = True
     return res
+
+def jouer():
+    """
+    Description de la fonction : Permet de jouer au jeu du pendu
+    return : None
+    """
+    print('-------------------------')
+    print('BIENVENUE AU JEU DU PENDU')
+    print('-------------------------')
+    global MOT_A_DECOUVRIR
+    global MOT_MYSTERE
+    global SCORE
+    global LETTRES_DEJA_CHOISIES
+    
+    # Initialisation des variables globales
+    
+    print('Mot à découvrir :')
         
     
 #deja_choise  fait
