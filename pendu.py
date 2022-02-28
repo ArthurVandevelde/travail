@@ -101,16 +101,20 @@ def remplace_tiret(lettre):
     return (bool) : True si le joueur à trouver une nouvelle lettre, False sinon
     MODIFICATION DE MOT_MYSTERE
     """
-    i = 0
-    while i = len(MOT_A_DECOUVRIR):
+    global MOT_MYSTERE
+    res = False
+    for i in range(len(MOT_A_DECOUVRIR)):
         if lettre == MOT_A_DECOUVRIR[i]:
-            #d
-        i = i + 1
+            MOT_MYSTERE = MOT_MYSTERE[0:i] + lettre + MOT_MYSTERE[i+1 : len(MOT_A_DECOUVRIR)]
+            print(MOT_MYSTERE)
+            res = True
+    return res
+        
     
 #deja_choise  fait
 #jeu_fini        fait
 #afficher_bilan  fait
 #nettoyage_mot   fait
 #tirage_au_sort  fait
-#remplace_tiret
+#remplace_tiret fait
 #jouer
