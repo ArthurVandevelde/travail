@@ -123,9 +123,11 @@ def jouer():
     global SCORE
     global LETTRES_DEJA_CHOISIES
     
+    tirage_au_sort('dictionnaire.txt')
+    
     # Initialisation des variables globales
     
-    print('Mot à découvrir :')
+    print('Mot à découvrir :',MOT_MYSTERE)
         
     
 #deja_choise  fait
