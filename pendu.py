@@ -1,4 +1,6 @@
 from random import randint
+SCORE = 8
+LETTRES_DEJA_CHOISIES = []
 
 def nettoyage_mot(mot):
     """
@@ -8,8 +10,8 @@ def nettoyage_mot(mot):
     """
     mot = mot.lower()
     mot = mot[0:len(mot)-1]
-    accent = ['é','è','ê','ë','à','â','ù','û','ç','î','ï']
-    sans_accent = ['e','e','e','e','a','a','u','u','c','i','i',]
+    accent = ['é','è','ê','ë','à','â','ù','û','ç','î','ï','ô']
+    sans_accent = ['e','e','e','e','a','a','u','u','c','i','i','o']
     i = 0
     while i < len(accent):
         mot = mot.replace(accent[i],sans_accent[i])
@@ -32,20 +34,8 @@ def tirage_au_sort(nom_fichier):
     i = 0
     MOT_MYSTERE = ""
     MOT_A_DECOUVRIR = nettoyage_mot(chaine)
-    while i < len(MOT_A_DECOUVRIR):
-        MOT_MYSTERE = MOT_MYSTERE + '-'
-        i = i + 1
-    return MOT_A_DECOUVRIR, MOT_MYSTERE
+    return nettoyage_mot(chaine),'-'*len(nettoyage_mot(chaine))
 
-print(tirage_au_sort('dictionnaire.txt'))
-
-def nettoyage_mot(mot):
-    """
-    Description de la fonction : met en forme un mot choisi par l'ordinateur
-    mot (str) : mot comportant des caractères non souhaités (accents, majuscules, caractères retour à la ligne)
-    return (str) :  mot "nettoyé" (tout en minuscule, en enlevant les accents et les retours à la ligne)
-    """
-    print(mot.lower())
 
 def deja_choise(lettre):
     """
@@ -73,7 +63,8 @@ def jeu_fini():
     """
     global SCORE
     global MOT_MYSTERE
-    if SCORE == 0 or "-" not in MOT_MYSTERE:
+    global MOT_A_DECOUVRIR
+    if SCORE == 0 or MOT_MYSTERE == MOT_A_DECOUVRIR:
         return True
     else:
         return False
@@ -102,34 +93,39 @@ def remplace_tiret(lettre):
     MODIFICATION DE MOT_MYSTERE
     """
     global MOT_MYSTERE
+    global MOT_A_DECOUVRIR
+    global SCORE
     res = False
     for i in range(len(MOT_A_DECOUVRIR)):
         if lettre == MOT_A_DECOUVRIR[i]:
             MOT_MYSTERE = MOT_MYSTERE[0:i] + lettre + MOT_MYSTERE[i+1 : len(MOT_A_DECOUVRIR)]
-            print(MOT_MYSTERE)
             res = True
-    return res
+        else:
+           resultat = False
+    if lettre in MOT_A_DECOUVRIR:
+        pass
+    else:
+        SCORE = SCORE - 1
+    return resultat
 
 def jouer():
-    """
-    Description de la fonction : Permet de jouer au jeu du pendu
-    return : None
-    """
     global MOT_A_DECOUVRIR
     global MOT_MYSTERE
     global SCORE
     global LETTRES_DEJA_CHOISIES
-    
     res = tirage_au_sort('dictionnaire.txt')
+    MOT_A_DECOUVRIR = res[0]
+    MOT_MYSTERE = res[1]
     print("-------------------------\nBIENVENUE AU JEU DU PENDU\n-------------------------")
     while jeu_fini() == False:
-        print("Mot à découvrir :  ",MOT_MYSTERE)
+        print("\nMot à découvrir :", MOT_MYSTERE)
         lettre = input("proposez une lettre : ")
+        deja_choise(lettre)
+        remplace_tiret(lettre)
+        print()
+    afficher_bilan()
     
-    # Initialisation des variables globales
-    
-    print('Mot à découvrir :',MOT_MYSTERE)
-        
+print(jouer())
     
 #deja_choise  fait
 #jeu_fini        fait
@@ -137,4 +133,4 @@ def jouer():
 #nettoyage_mot   fait
 #tirage_au_sort  fait
 #remplace_tiret fait
-#jouer
+#jouer fait
