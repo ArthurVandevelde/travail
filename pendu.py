@@ -115,15 +115,16 @@ def jouer():
     Description de la fonction : Permet de jouer au jeu du pendu
     return : None
     """
-    print('-------------------------')
-    print('BIENVENUE AU JEU DU PENDU')
-    print('-------------------------')
     global MOT_A_DECOUVRIR
     global MOT_MYSTERE
     global SCORE
     global LETTRES_DEJA_CHOISIES
     
-    tirage_au_sort('dictionnaire.txt')
+    res = tirage_au_sort('dictionnaire.txt')
+    print("-------------------------\nBIENVENUE AU JEU DU PENDU\n-------------------------")
+    while jeu_fini() == False:
+        print("Mot à découvrir :  ",MOT_MYSTERE)
+        lettre = input("proposez une lettre : ")
     
     # Initialisation des variables globales
     
