@@ -74,6 +74,8 @@ def afficher_bilan():
     Description de la fonction : Affiche les "messages bilans" en fin de partie (voir copie d'écran dans l'énoncé)
     return (None)
     """
+    global LETTRES_DEJA_CHOISIES
+    global reponce
     global SCORE
     global MOT_A_DECOUVRIR
     
@@ -81,9 +83,28 @@ def afficher_bilan():
         print('Vous avez perdu !!')
         print('Le mot recherché était ' + MOT_A_DECOUVRIR)
         
+        reponce = input( "veut tu rejouer , "+prenom+" ? : ")
+        if reponce == "oui":
+            LETTRES_DEJA_CHOISIES = []
+            SCORE = 8
+            print()
+            jouer()
+        else :
+            print("ok , une prochaine fois , "+prenom)
+        
     else:
-        print('Bravo! Vous avez trouvé le mot ' + MOT_A_DECOUVRIR)
+        print('Bravo! '+prenom+'. Vous avez trouvé le mot ' + MOT_A_DECOUVRIR)
         print('Votre SCORE est de ' + str(SCORE))
+        
+        reponce = input( "veut tu rejouer , "+prenom+" ? : ")
+        
+        if reponce == "oui":
+            LETTRES_DEJA_CHOISIES = []
+            SCORE = 8
+            print()
+            jouer()
+        else :
+            print("ok , une prochaine fois , "+prenom)
         
 def remplace_tiret(lettre):
     """
@@ -125,12 +146,21 @@ def jouer():
         print()
     afficher_bilan()
     
-print(jouer())
+#présentation
+global prenom
+prenom = input ("bonjour , comment t'apelle tu? : ")
+reponce = input("bonjour " + prenom +" , veux tu jouer : ")
+if reponce == "oui":
+    print()
+    jouer()
+else :
+    print("ok , une prochaine fois , "+prenom)
+    
     
 #deja_choise  fait
 #jeu_fini        fait
 #afficher_bilan  fait
 #nettoyage_mot   fait
 #tirage_au_sort  fait
-#remplace_tiret fait
-#jouer fait
+#remplace_tiret
+#jouer
