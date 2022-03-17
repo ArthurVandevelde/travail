@@ -32,3 +32,19 @@ def ajoute(t1,t2):
     for i in range(len(t1)):
         t = t+ (t1[i] + t2[i],) 
     return t
+
+exercice6
+def liste (a , b):
+    d = len(a)
+    c = 0
+    final = []
+    while c < d:
+        zipper = (a[c] , b[c])
+        final.append(zipper)
+        c = c + 1
+    return final
+        
+a = [1,2,3,4]
+b = ["a","b","c","d"]
+
+print(liste(a,b))
