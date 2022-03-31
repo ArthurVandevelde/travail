@@ -33,47 +33,72 @@ def puissance(x, n):
 ##
 ### exercice 4
 ##
-###Version 1
-##
-##def est_croissant(t):
-##    i = len(t) - 1
-##    while i >= 0:
-##        if t[i] <= t[i+1] :
-##            return True
-##        else :
-##            return False
-##        i = i - 1
-##        
-###Version 2
-##
-##def est_croissant(t):
-##    i = len(t) - 1
-##    while i >= 0:
-##        if t[i-1] <= t[i] :
-##            return True
-##        else :
-##            return False
-##        i = i - 1
-##        
-###Version 3
-##
-##def est_croissant(t):
-##    i = len(t) - 1
-##    while i >= 0:
-##        if t[i-1] > t[i] :
-##            return False
-##        i = i - 1
-##    return True
-##
-###Version 4
-##
-##def est_croissant(t):
-##    i = len(t) - 1
-##    while i > 0:
-##        if t[i-1] > t[i] :
-##            return False
-##        i = i - 1
-##    return True
+#Version 1
+
+def est_croissant(t):
+    """
+    >>> est_croissant(0,8,9)
+    True
+    >>> est_croissant(3,2,1)
+    False
+    """
+    i = len(t) - 1
+    while i >= 0:
+        if t[i] <= t[i+1] :
+            return True
+        else :
+            return False
+        i = i - 1
+        
+#Version 2
+
+def est_croissant(t):
+    """
+    >>> est_croissant(0,8,9)
+    True
+    >>> est_croissant(3,2,1)
+    False
+    """
+    i = len(t) - 1
+    while i >= 0:
+        if t[i-1] <= t[i] :
+            return True
+        else :
+            return False
+        i = i - 1
+        
+#Version 3
+
+def est_croissant(t):
+    """
+    >>> est_croissant(0,8,9)
+    True
+    >>> est_croissant(3,2,1)
+    False
+    """
+    i = len(t) - 1
+    while i >= 0:
+        if t[i-1] > t[i] :
+            return False
+        i = i - 1
+    return True
+
+#Version 4
+
+def est_croissant(t):
+    """
+    >>> est_croissant(0,8,9)
+    True
+    >>> est_croissant(3,2,1)
+    False
+    """
+    i = len(t) - 1
+    while i > 0:
+        if t[i-1] > t[i] :
+            return False
+        i = i - 1
+    return True
+
 
 if __name__ == '__main__':
     # Validation des tests
