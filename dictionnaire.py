@@ -34,5 +34,18 @@ def recherche_velo2():
 
 #print(recherche_velo2())
 
-#Exercice 3
+#exercice 3
 
+positions = {}
+positions[(48.853585, 2.301490)] = "Paris"
+positions[(11.611358, 43.147752)] = "Djibouti"
+positions[(37.023113, -8.996601)] = "Fortaleza de Sao Vicente"
+positions[(7.677989,-5.025387)] = "Bouaké"
+
+def localisation_photo(coordonnées,dictionnaire):
+    for endroit in dictionnaire:
+        if coordonnées == endroit:
+            return positions[endroit]
+    return None
+
+localisation_photo((7.677989,-5.025387),positions)
