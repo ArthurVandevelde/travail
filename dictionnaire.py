@@ -51,8 +51,6 @@ def localisation_photo(coordonnées,dictionnaire):
 localisation_photo((7.677989,-5.025387),positions)
 
 # Exercice 4
-
- 
 def lecture(nom_fichier):
     """
     description : ouvre un fichier texte et renvoie son contenu sous la forme d'une chaîne de caractère
@@ -62,16 +60,14 @@ def lecture(nom_fichier):
     with open(nom_fichier,'r') as fichier:
         return fichier.read()
 
-def occurence ():
-    a = lecture('big_brother.txt')
+def occurence (chaine):
     occurence = { }
     chiffre = 0
-    for lettre in a:
-        for nombre in a :
-            if nombre == lettre:
-                chiffre = chiffre + 1
-        occurence[lettre] = chiffre
+    for lettre in chaine:
+        if lettre in occurence.keys():
+            occurence[lettre] =  occurence[lettre] +1
+        else :
+            occurence[lettre] = 1
     return occurence
 
-print(occurence())
-
+print(occurence(lecture('big_brother.txt')))
